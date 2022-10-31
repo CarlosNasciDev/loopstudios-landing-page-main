@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 40vh 50vh 10vh;
+}
+
+header{
+    width: 100vw;
+    background-image: url('images/desktop/image-hero.jpg');
+    color: white;
+}
+footer{
+    background-color: black;
+    color: white;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+
+.attribution a { color: hsl(228, 45%, 44%); }
