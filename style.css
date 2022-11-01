@@ -20,6 +20,83 @@ header{
     background-image: url('images/desktop/image-hero.jpg');
     color: white;
 }
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar{
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 45px;
+}
+
+.navMenu{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.navLink{
+    transition: 0.5s ease;
+}
+
+.navLink:hover{
+    text-decoration: underline;
+}
+
+.hamburguer{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 2px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px){
+    .hamburguer{
+        display: block;
+    }
+    .hamburguer.active .bar:nth-child(2){
+        opacity:0;
+    }
+    .hamburguer.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburguer.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    } 
+    .navMenu{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+        transition: 0.3s;
+    }   
+    .navItem{
+        margin: 16px 0;
+    }
+    .navMenu{
+        left: 0;
+    }
+}
+
 footer{
     background-color: black;
     color: white;
