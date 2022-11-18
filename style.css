@@ -4,21 +4,27 @@
     box-sizing: border-box;
 }
 
-body{
-    width: 100vw;
-    height: 100vh;
-    font-family: "Josefin Sans", "sans serif";
+:root{
+    --very-dark-gray: hsl(0,0%,41%);
+    --dark-gray: hsl(0,0%,55%);
+    --white: hsl(0,0%,100%);
+    --black: hsl(0,0%,0%);
+
+    --ff-josefin-sans: "Josefin Sans", sans-serif;
+    --ff-alata: "Alata", sans-serif;
+    --fs-h1: 4.7em;
+    --fs-h2: 3.2em;
+    --fs-h3: 2.1em;
+    --fs-regular: 15px;
+    --fw-300: 300;
+
+    --px: 165px; /*padding left e right*/
+    --mb: 100px; /*margin botton*/
 }
 
-.container{
-    display: grid;
-    grid-template-rows: 40vh 50vh 10vh;
-}
-
-header{
-    width: 100vw;
-    background-image: url('images/desktop/image-hero.jpg');
-    color: white;
+html{
+    font-family: var(--ff-alata);
+    font-size: var(--fs-regular);
 }
 
 li{
@@ -26,82 +32,24 @@ li{
 }
 
 a{
+    display: inline-block;
     text-decoration: none;
-    color: white;
+     color: var(--white);
 }
 
-.navbar{
-    min-height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 45px;
+h1, h2, h3{
+    font-family: var(--ff-josefin-sans);
+    font-weight: var(--fw-300);
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.navMenu{
-    display: flex;
-    align-items: center;
-    gap: 60px;
+.main-container{
+    max-width: 1440px;
+    margin: auto;
+    background: var(--white);
 }
 
-.navLink{
-    transition: 0.5s ease;
+header{
+    background: #0006 url(images/desktop/image-hero.jpg) no-repeat center;
 }
-
-.navLink:hover{
-    text-decoration: underline;
-}
-
-.hamburguer{
-    display: none;
-    cursor: pointer;
-}
-
-.bar{
-    display: block;
-    width: 28px;
-    height: 3px;
-    border-radius: 2px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-}
-
-@media (max-width: 768px){
-    .hamburguer{
-        display: block;
-    }
-    .hamburguer.active .bar:nth-child(2){
-        opacity:0;
-    }
-    .hamburguer.active .bar:nth-child(1){
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburguer.active .bar:nth-child(3){
-        transform: translateY(-8px) rotate(-45deg);
-    } 
-    .navMenu{
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        gap: 0;
-        text-align: center;
-        flex-direction: column;
-        width: 100%;
-        transition: 0.3s;
-    }   
-    .navItem{
-        margin: 16px 0;
-    }
-    .navMenu{
-        left: 0;
-    }
-}
-
-footer{
-    background-color: black;
-    color: white;
-}
-
-.attribution { font-size: 11px; text-align: center; }
-
-.attribution a { color: hsl(228, 45%, 44%); }
