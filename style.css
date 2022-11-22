@@ -142,4 +142,111 @@ nav ul li:hover::after{
 .product-grid{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    place-content: center;
+    gap: 30px;
+}
+
+.product-card{
+    position: relative;
+    height: 450px;
+    cursor: pointer;
+}
+
+.product-card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.product-card::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, #000b);
+}
+
+.product-card:hover::after{
+    background: linear-gradient(180deg, #fffa 40%, #555a);
+}
+
+.product-card h3{
+    position: absolute;
+    bottom: 35px;
+    left: 40px;
+    font-size: var(--fs-h3);
+    color: var(--white);
+    z-index: 5;
+}
+
+.product-card h3:hover{
+    color: var(--black);
+}
+
+.btn-primary{
+    position: absolute;
+    right: var(--px);
+    top: 5px;
+    padding: 8px 35px;
+    letter-spacing: 5px;
+    border: 1px solid var(--black);
+    color: var(--black);
+}
+
+.btn-primary:hover{
+    color: var(--white);
+    background: var(--black);
+}
+
+footer{
+    background: var(--black);
+    padding: 45px var(--px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-brand{
+    margin-bottom: 20px;
+}
+
+.footer-brand img{
+    max-width: 140px;
+}
+
+.footer-right{
+    text-align: right;
+}
+
+.social-links{
+    margin-bottom: 20px;
+}
+
+.social-links a{
+    font-size: 1.8em;
+    color: var(--white);   
+}
+
+.social-links a:not(:last-child){
+    margin-right: 12px;
+}
+
+.copyright{
+    color: var(--very-dark-gray);
+}
+
+@media screen and (max-whidth: 1200px){
+    .about .img-box{
+        margin-bottom: 80px;
+    }
+
+    .about .img-box img{
+        width: 100%;
+    }
+
+    .about .content-box{
+        position: static;
+        max-width: 100%;
+        text-align: center;
+        padding: 0 95px;
+    }
 }
