@@ -1,7 +1,9 @@
-const hamburguer = document.querySelector(".hamburguer")
-const navMenu = document.querySelector(".navMenu")
+const hamburguer = document.querySelector("#open-btn")
+const closeBtn = document.querySelector("#close-btn")
 
-hamburguer.addEventListener("click",() => {
-    hamburguer.classList.toggle("active")
-    navMenu.classList.toggle("active")
-})
+const navBar = document.querySelector('.navbar-nav')
+
+const navbarToggle = () => navBar.classList.toggle('active')
+
+hamburguer.addEventListener("click", navbarToggle)
+closeBtn.addEventListener("click", navbarToggle)
